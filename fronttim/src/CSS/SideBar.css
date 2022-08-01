@@ -1,0 +1,17 @@
+.Body_SideBar {
+    position: relative;
+    text-decoration: none;
+    float: right;
+    padding: 15px;
+}
+
+.Body_SideBar:hover{
+    
+    background: #FFBFC1;
+}
+
+.Buton_Sidebar {
+    text-decoration: none;
+    cursor: pointer;
+    color: #1f1f1f;
+}
