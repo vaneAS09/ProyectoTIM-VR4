@@ -49,6 +49,7 @@ function App() {
             <Route path='/ShowResultados' element={ <CompShowResultados />} />
             <Route path='/ShowResultadosF/:codigo_unico' element={ <CompShowResultadosF />} />
             <Route path='/editR/:id' element={ <CompEditResultados />} />
+            <Route path='*' element={ <Navigate replace to="/"/> }/>
   
         </Routes>
       </BrowserRouter>
