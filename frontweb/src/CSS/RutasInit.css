@@ -1,0 +1,174 @@
+
+.punto{
+position: relative;
+top: 0px;
+left: 0px;
+width: 300px;
+height: 300px;
+/* UI Properties */
+background: transparent url('../Images/punto-init-validation.png') 10% 10% no-repeat padding-box;
+opacity: 1;
+border-radius: 60px;
+}
+
+.Linea{
+position: absolute;
+top: 40px;
+left: 30px;
+width: 1200px;
+height: 0.5px;
+background-color:#C4161C;
+border-radius: 0%;
+height: 1px;
+width: 60%;
+}
+
+.fuente_init {
+position: absolute;
+top: 0px;
+left: 30px;
+width: 700px;
+height: 35px;
+text-align: left;
+font: normal normal 900 16px/16px Segoe UI;
+letter-spacing: 0px;
+color: #C4161C;
+opacity: 1;
+
+}
+
+.Position_init {
+    position:relative;
+    top: 30px;
+    left: 30px;
+    width: 700px;
+    height: 35px;
+    
+    }
+
+.Imagen_init{
+position: absolute;
+top: 560px;
+left: 155px;
+width: 642px;
+height: 642px;
+background: transparent url('../Images/img-validación-init.png') no-repeat padding-box;
+opacity: 1;
+}
+
+.Inicio_Form{
+    position: relative;
+    top: 0px;
+    left: 30px;
+    width: 400px;
+    height: 500px;
+    background: var(--blanco) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    }
+
+    .formulario{
+        position: relative;
+        outline: none;
+        width: 240px;
+        margin-left: 20px;
+        margin-right: auto;
+        margin-top: 60px;
+    }
+
+    .input{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        outline: none;
+        border: 0;
+        border-bottom: 1px solid rgb(102, 101, 101);
+        width: 340px;
+        margin-left: 20px;
+        margin-right: auto;
+        margin-top: 0px;
+        align-items: center;
+        text-align: left;
+        font: normal normal 900 16px/16px Segoe UI;
+    }
+
+    .espacio{
+        outline: none;
+        width: 340px;
+        height: 20px;
+    }
+
+    .btn_go{
+        position: relative;
+        top: 20px;
+        left: 80px;
+        width: 273px;
+        height: 200px;
+        border: 1px solid var(--gris);
+        background-color:rgba(110, 5, 5, 0.966);
+        background: transparent url('../Images/init-test-validation.png') no-repeat padding-box;
+        font-weight: bold;
+        font-size:larger;
+        opacity: 1;
+        margin-left: 0px;
+        margin-right: auto;
+        margin-top: 60px;
+        }
+
+    .font_iniciar_test{
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        width: 273px;
+        height: 200px;
+        font-weight: bold;
+        font-size:larger;
+        color: #C4161C;
+        opacity: 1;
+    }
+
+    .font_volver{
+        position: absolute;
+        top: 555px;
+        left: 0px;
+        width: 50px;
+        height: 50px;
+        font-weight: bold;
+        font-size:140%;
+        color: #C4161C;
+        opacity: 1;
+    }
+
+    
+    .font_volver2{
+        position: absolute;
+        top: 790px;
+        left: 0px;
+        width: 50px;
+        height: 50px;
+        font-weight: bold;
+        font-size:140%;
+        color: #C4161C;
+        opacity: 1;
+    }
+
+    .font_volver3{
+        position: absolute;
+        top: 416px;
+        left: 0px;
+        width: 50px;
+        height: 50px;
+        font-weight: bold;
+        font-size:140%;
+        color: #C4161C;
+        opacity: 1;
+    }
+
+

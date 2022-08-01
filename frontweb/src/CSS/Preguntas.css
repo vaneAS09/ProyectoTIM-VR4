@@ -1,0 +1,79 @@
+
+
+.Form_Preguntas{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 500px;
+    height: 500px;
+    background: var(--blanco) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    }
+
+    .fuente_preguntas {
+        text-align: left;
+        font: normal normal 900 16px/16px Segoe UI;
+        letter-spacing: 0px;
+        color: #463E3F;
+        opacity: 1;
+        
+        }
+
+.btn_siguiente{
+position: absolute;
+/* Layout Properties */
+top: 780px;
+left: 215px;
+width: 140px;
+height: 32px;
+/* UI Properties */
+background: #C4161C 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px #E8484829;
+border: 1px solid #820C0C;
+border-radius: 47px;
+opacity: 1;
+}
+
+.btn_atras{
+    position: absolute;
+    top: 780px;
+    left: 10px;
+    width: 140px;
+    height: 32px;
+    background: #C4161C 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #E8484829;
+    border: 1px solid #820C0C;
+    border-radius: 47px;
+    opacity: 1; 
+}
+
+.Fuente_botones{
+/* Layout Properties */
+color: var(--blanco);
+text-align: center;
+font: normal normal 900 15px/18px Segoe UI;
+letter-spacing: 0px;
+color: #FFFFFF;
+opacity: 1;
+}
+
+.fuente_finalizar{
+    position: absolute;
+    top: 250px;
+    left: 25px;
+    width: 291px;
+    height: 90px;
+    text-align: center;
+    font: normal normal normal 57px/75px KG Red Hands;
+    letter-spacing: 0px;
+    color: #463E3F;
+    text-transform: capitalize;
+}
