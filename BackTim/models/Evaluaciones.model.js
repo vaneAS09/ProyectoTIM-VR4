@@ -1,0 +1,62 @@
+//importamos la conexión a la DB
+import db from "../config/db.js";
+//importamos sequelize
+import { DataTypes } from "sequelize";
+
+ const evaluacionesmodel = db.define('evaluaciones', {
+
+    documento:{ type: DataTypes.STRING, required: true },
+    nombres: { type: DataTypes.STRING, required: true, min: 6, max: 255 },
+    apellidos: { type: DataTypes.STRING, required: true, min: 6, max: 1024 },
+    ciudad: { type: DataTypes.STRING, required: true, min: 3, max: 255 },
+    grado: { type: DataTypes.STRING, required: true, min: 3, max: 255 },
+    email: { type: DataTypes.STRING, required: true, min: 6, max: 255 },
+    programa1: { type: DataTypes.STRING, required: true, min: 6, max: 255 },
+    programa2: { type: DataTypes.STRING, required: true, min: 6, max: 255 },
+    codigo_unico: { type: DataTypes.STRING, required: true, min: 6, max: 255 },
+    colegio: { type: DataTypes.STRING, required: true, min: 6, max: 255 },
+    pregunta1: {type: DataTypes.INTEGER, required: true},
+    pregunta2: {type: DataTypes.INTEGER, required: true},
+    pregunta3: {type: DataTypes.INTEGER, required: true},
+    pregunta4: {type: DataTypes.INTEGER, required: true},
+    pregunta5: {type: DataTypes.INTEGER, required: true},
+    pregunta6: {type: DataTypes.INTEGER, required: true},
+    pregunta7: {type: DataTypes.INTEGER, required: true},
+    pregunta8: {type: DataTypes.INTEGER, required: true},
+    pregunta9: {type: DataTypes.INTEGER, required: true},
+    pregunta10: {type: DataTypes.INTEGER, required: true},
+    pregunta11: {type: DataTypes.INTEGER, required: true},
+    pregunta12: {type: DataTypes.INTEGER, required: true},
+    pregunta13: {type: DataTypes.INTEGER, required: true},
+    pregunta14: {type: DataTypes.INTEGER, required: true},
+    pregunta15: {type: DataTypes.INTEGER, required: true},
+    pregunta16: {type: DataTypes.INTEGER, required: true},
+    pregunta17: {type: DataTypes.INTEGER, required: true},
+    pregunta18: {type: DataTypes.INTEGER, required: true},
+    pregunta19: {type: DataTypes.INTEGER, required: true},
+    pregunta20: {type: DataTypes.INTEGER, required: true},
+    pregunta21: {type: DataTypes.INTEGER, required: true},
+    pregunta22: {type: DataTypes.INTEGER, required: true},
+    pregunta23: {type: DataTypes.INTEGER, required: true},
+    pregunta24: {type: DataTypes.INTEGER, required: true},
+    pregunta25: {type: DataTypes.INTEGER, required: true},
+    pregunta26: {type: DataTypes.INTEGER, required: true},
+    pregunta27: {type: DataTypes.INTEGER, required: true},
+    pregunta28: {type: DataTypes.INTEGER, required: true},
+    pregunta29: {type: DataTypes.INTEGER, required: true},
+    pregunta30: {type: DataTypes.INTEGER, required: true},
+    pregunta31: {type: DataTypes.INTEGER, required: true},
+    pregunta32: {type: DataTypes.INTEGER, required: true},
+    pregunta33: {type: DataTypes.INTEGER, required: true},
+    pregunta34: {type: DataTypes.INTEGER, required: true},
+    pregunta35: {type: DataTypes.INTEGER, required: true},
+    pregunta36: {type: DataTypes.INTEGER, required: true},
+    pregunta37: {type: DataTypes.INTEGER, required: true},
+    pregunta38: {type: DataTypes.INTEGER, required: true},
+    pregunta39: {type: DataTypes.INTEGER, required: true},
+    pregunta40: {type: DataTypes.INTEGER, required: true},
+    estado: {type: DataTypes.STRING, required: true},
+ 
+ })
+
+ export default evaluacionesmodel;
