@@ -4,15 +4,20 @@ import { useNavigate, useParams} from 'react-router-dom';
 import '../CSS/Home.css';
 import '../CSS/Listas_objetos.css';
 import '../CSS/Navbar.css';
-import { DeleteOutline, HorizontalSplit } from "@material-ui/icons";
+import { DeleteOutline, HorizontalSplit} from "@material-ui/icons";
 import { DataGrid,GridToolbarExport,GridToolbarContainer,GridToolbarColumnsButton,GridToolbarFilterButton,
-         GridToolbarDensitySelector} from "@material-ui/data-grid";
+         GridToolbarDensitySelector,
+         GridHeader,
+         useGridColumns,
+         GridColumnsHeader,
+         GridRowCells} from "@material-ui/data-grid";
 import SideBar from "../SideBar";
 import {getIntVerbal,getIntMatematica,getIntVisualEspacial,getIntNaturalista,getIntRitmicoMusical,
          getIntkinesico_corporal,getIntIntraPersonal,getIntInterPersonal} from "./Programas.js";
 import PrintIcon from '@material-ui/icons/Print'
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import { Button } from '@mui/material';
 
 
 const URI = 'http://localhost:5000/resultados/'
@@ -23,23 +28,26 @@ export default function CompShowResultadosF  ()  {
 
   const [resultados, setResultado] = useState([]);
   const navigate = useNavigate()
-  const {id} = useParams()
-  const {codigo_unico} = useParams()
-  //const verde =    getCellClassName()
+  const {codigo_test} = useParams()
   
-   
-    useEffect( ()=>{
-        getResultado()
-    },[])
+
+
+
+  useEffect( ()=>{
+    getResultado()
+      },[])
+
 
     //procedimiento para mostrar todos los resultados
     const getResultado = async () => {
-        const res = await axios.get(URI, {
-            codigo_test:codigo_unico
-      });
-      console.log(codigo_unico)
-        setResultado(res.data)
-    }
+      const res = await axios.get(URI+ codigo_test , {
+        
+    });
+      setResultado(res.data)
+  }
+   
+  console.log(codigo_test + " Este dato")
+ 
 
     //procedimiento para eliminar un resultado
    const deleteResultado = async (id) => {
@@ -49,11 +57,13 @@ export default function CompShowResultadosF  ()  {
 
 
   //Configurar las columnas para Datatable
+
   const columns = [
+    
     {field: "id", headerName: "ID", width: 90 },
     {field: "num_documento", headerName: "Documento",width: 120,},
     {field: "nombre_completo", headerName: "Nombre completo", width: 180,},
-    {field: "codigo_test", headerName: "Código Único", width: 200,},
+    {field: "codigo_test", headerName: "Código Único", width: 200, },
     {field: "grado", headerName: "Grado", width: 160,},
     {field: "colegio", headerName: "Colegio", width: 160,},
     {field: "programa_pre1", headerName: "Programa de interés", width: 160,},
@@ -116,17 +126,34 @@ export default function CompShowResultadosF  ()  {
         );
       },
     },
+
   ];
 
+
   const downloadPdf = () => {
-    const doc = new jsPDF()
-    doc.text("Student Details", 20, 10)
+
+    const unit = "pt";
+    const size = "A4"; // Use A1, A2, A3 or A4
+    const orientation = "landscape"; // portrait or landscape
+
+
+    const doc = new jsPDF(orientation, unit, size)
+    doc.setFontSize(20);
+    doc.text("Resultados", 20, 10)
+    const headers = [["Id", "Documento", "Nombre Completo", "Código Único", 
+    "Grado",	"Colegio"	,"Programa de interés",	"Programa de interés",	
+    "Int Verbal",	"Int Matemática",	"Int visual espacial",	
+    "Int naturalista",	"Int kinésico corporal",	"Int ­ríttmico musical",	
+    "Int intrapersonal",	"Int interpersonal",	"Fecha de Creación",	"Fecha de Modificación"
+  ]];
+
     doc.autoTable({
-      theme: "DataGrid",
-      columns: columns.map(col => ({ ...col, dataKey: col.field })),
+      theme: "grid",
+      head: headers,
+      columns: columns.map(col => ({ ...col, dataKey: col.field})),
       body: resultados
     })
-    doc.save('table.pdf')
+    doc.save('Report.pdf')
   }
       
       function MyExportButton() {
@@ -136,7 +163,8 @@ export default function CompShowResultadosF  ()  {
       <GridToolbarFilterButton />
       <GridToolbarDensitySelector />
       <GridToolbarExport />
-      <PrintIcon />
+      <Button onClick={downloadPdf}>  
+            Print Report  </Button> 
       </GridToolbarContainer>
      
         );
@@ -174,6 +202,8 @@ useEffect(() => {
   }
 
 }, [token]);
+
+
 
 
     return(
@@ -221,18 +251,19 @@ useEffect(() => {
 
             <div class="Test_icon_init"></div>  
             <div class="Usuarios_title_init">Resultados</div>
+
     
                     <DataGrid className='Tabla_position'
-                      rows={resultados}
+                      rows = {resultados}
                       disableSelectionOnClick
                       columns={columns}
                       pageSize={8}
                       responsive= {HorizontalSplit}
                       checkboxSelection
                       components={{
-                        Toolbar: MyExportButton
+                        Toolbar: MyExportButton,
+                  
                       }}
-
                       actions={[
                         {
                           icon: () => <PrintIcon />,// you can pass icon too
