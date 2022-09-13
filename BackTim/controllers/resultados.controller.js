@@ -15,13 +15,12 @@ export const getAllResultados = async (req, res) => {
 //Mostrar un registro
 export const getResultados = async (req, res) => {
 
-    const codigo_test  = req.body;
-
         try {
             const resultado = await resultadosmodel.findAll({
-                where:{ codigo_test:req.body.codigo_test } })
+                where: { codigo_test: req.params.codigo_test }})
+
                 res.json(resultado)
-           
+
         } catch (error) {
             res.json( {message: error.message} )
             console.log(codigo_test)
@@ -56,5 +55,8 @@ export const updateResultado = async (req, res) => {
         res.json( {message: error.message} )
     }
 }
+  
+
+
   
 
