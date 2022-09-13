@@ -47,7 +47,7 @@ function App() {
             <Route path='/ShowEvaluaciones' element={ <CompShowEvaluaciones />} />
             <Route path='/editE/:id' element={ <CompEditEvaluaciones />} />
             <Route path='/ShowResultados' element={ <CompShowResultados />} />
-            <Route path='/ShowResultadosF/:codigo_unico' element={ <CompShowResultadosF />} />
+            <Route path='/ShowResultadosF/:codigo_test' element={ <CompShowResultadosF />} />
             <Route path='/editR/:id' element={ <CompEditResultados />} />
             <Route path='*' element={ <Navigate replace to="/"/> }/>
   
@@ -59,3 +59,4 @@ function App() {
 }
 
 export default App;
+
