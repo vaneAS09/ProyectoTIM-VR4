@@ -8,15 +8,30 @@ import '../CSS/style.css';
 const URI = 'http://localhost:5000/test/'
 
 const CompCreateTest = () => {
-    const [codigo_unico, setCodigo] = useState('')
+    //const [codigo_unico, setCodigo] = useState('')
     const [colegio, setColegio] = useState('')
     const [ciudad, setCiudad] = useState('')
     const [estado, setEstado] = useState('')
 
 
+    const navigate = useNavigate()   
 
-    const navigate = useNavigate()    
+    var init = 1000
+    var fin =  100000
+
+    function random() {
+        return Math.floor((Math.random() * (fin - init + 1)) + init);
+    }
+
+    const aleatorio = random();
+
+    console.log(aleatorio, "ver num");
+    console.log(String(aleatorio), "ver cadena");
     
+    const codigo_unico = String(aleatorio);
+
+    
+       
     //procedimiento guardar
     const Guardar = async (e) => {
         e.preventDefault()
@@ -41,7 +56,6 @@ const CompCreateTest = () => {
                      <label className='form-label'>* Código único</label>
                     <input
                         value={codigo_unico}
-                        onChange={ (e)=> setCodigo(e.target.value)} 
                         type="text"
                         className='form-control'
                         minlength="5" 
