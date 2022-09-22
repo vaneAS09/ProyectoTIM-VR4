@@ -54,13 +54,12 @@ export default function CompShowResultadosF  ()  {
 
   const columns = [
     
-    {field: "num_documento", headerName: "Documento",width: 120,},
+    {field: "num_documento", headerName: "Documento",width: 120},
     {field: "nombre_completo", headerName: "Nombre completo", width: 180,},
     {field: "codigo_test", headerName: "Código Único", width: 200, },
     {field: "grado", headerName: "Grado", width: 160,},
     {field: "colegio", headerName: "Colegio", width: 160,},
     {field: "programa_pre1", headerName: "Programa de interés", width: 160,},
-    {field: "programa_pre2", headerName: "Programa de interés", width: 160,},
     {field: "puntos_verbal", headerName: "Int Verbal", width: 160, 
     
     cellClassName: (params) => {
@@ -292,12 +291,14 @@ export default function CompShowResultadosF  ()  {
                   }
                   }
                   })
+  const cantPruebas = [resultados.length]/2
+
   doc.text("Fecha de la actividad:", 40, 640 )
   doc.text([resultados[0].createdAt], 150, 640)
   doc.text("Grado:", 40, 660 )
   doc.text([resultados[0].grado], 90, 660)
   doc.text("Número de pruebas presentadas:", 40, 680 )
-  doc.text(String([resultados.length]), 200, 680)
+  doc.text(String(cantPruebas), 200, 680)
   doc.text("Anexos: Tabla 1. Resultados pruebas múltiples.", 40, 720 )
   
 
@@ -367,7 +368,7 @@ var imgData = (
         ]];
 
         doc.setFontSize(8);
-        doc.text("| Documento                        | Nombre completo          | Código | Grado    |  Colegio                 | Programa interes    | programa interes | V| M| V| N| K| R| IN| IE|   ",40,75)
+        doc.text("| Documento                        | Nombre completo                        | Código | Grado    |  Colegio                           | Programa interes          | V| M| V| N| K| R| IN| IE|   ",40,75)
 
         doc.autoTable({
           theme: "plain",
@@ -383,28 +384,28 @@ var imgData = (
             var programa = resultados[hookData.row.index].programa_pre1 
             var inteligencia = 1
 
-              if(hookData.column.index == 7 )  {
+              if(hookData.column.index == 6 )  {
                 hookData.cell.styles.fillColor = getIntVerbal(programa,inteligencia);
               }
-              if(hookData.column.index == 8 ) {
+              if(hookData.column.index == 7 ) {
                 hookData.cell.styles.fillColor = getIntMatematica(programa,inteligencia);
               }
-              if(hookData.column.index == 9 ) {
+              if(hookData.column.index == 8 ) {
                 hookData.cell.styles.fillColor = getIntVisualEspacial(programa,inteligencia);
               }
-              if(hookData.column.index == 10 ) {
+              if(hookData.column.index == 9 ) {
                 hookData.cell.styles.fillColor = getIntNaturalista(programa,inteligencia);
               }
-              if(hookData.column.index == 11 ) {
+              if(hookData.column.index == 10 ) {
                 hookData.cell.styles.fillColor = getIntkinesico_corporal(programa,inteligencia);
               }
-              if(hookData.column.index == 12 ) {
+              if(hookData.column.index == 11 ) {
                 hookData.cell.styles.fillColor = getIntRitmicoMusical(programa,inteligencia);
               }
-              if(hookData.column.index == 13 ) {
+              if(hookData.column.index == 12 ) {
                 hookData.cell.styles.fillColor = getIntIntraPersonal(programa,inteligencia);
               }
-              if(hookData.column.index == 14 ) {
+              if(hookData.column.index == 13 ) {
                 hookData.cell.styles.fillColor = getIntInterPersonal(programa,inteligencia);}
         }
       },
