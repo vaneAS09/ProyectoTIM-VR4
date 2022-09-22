@@ -6,7 +6,12 @@ import resultadosmodel from "../models/resultados.model.js"
 //Mostrar todos los registros
 export const getAllResultados = async (req, res) => {
     try {
-        const resultados = await resultadosmodel.findAll()
+        const resultados = await resultadosmodel.findAll({
+            order: [
+                ["num_documento", "ASC"],
+                ["nombre_completo", "ASC"],
+              ],
+        })
         res.json(resultados)
     } catch (error) {
         res.json( {message: error.message} )
